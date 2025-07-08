@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming App Case Study</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1A5D1A;
+            --primary-light: #E8F5E9;
+            --secondary: #4CAF50;
+            --accent: #FFC107;
+            --light-bg: #F9F9F9;
+            --dark-text: #333333;
+            --light-text: #FFFFFF;
+            --gray-text: #666666;
+            --negative: #E74C3C;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin: 3rem 0 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .pull-quote {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            border-left: 4px solid var(--secondary);
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+        
+        /* Layout */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2E7D32 100%);
+            color: var(--light-text);
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23ffffff" stroke-width="1" opacity="0.1"/></svg>');
+            background-size: 20px;
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-image {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        .project-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .info-block {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .info-block h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .info-block p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: var(--dark-text);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #FFB300;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+        }
+        
+        .btn i {
+            font-size: 0.9rem;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1.2rem 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 6rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .text-block {
+            padding: 2rem;
+        }
+        
+        .image-block {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        
+        .image-block img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* User Quotes */
+        .user-quote {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .user-quote::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            font-family: Georgia, serif;
+            color: var(--secondary);
+            opacity: 0.2;
+        }
+        
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .quote-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .author-name {
+            font-weight: 600;
+        }
+        
+        /* Personas */
+        .personas {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        @media (min-width: 992px) {
+            .personas {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .persona-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .persona-header {
+            background: var(--primary-dark);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .persona-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .persona-quote {
+            font-style: italic;
+            opacity: 0.8;
+        }
+        
+        .persona-body {
+            padding: 2rem;
+        }
+        
+        .persona-goals, .persona-frustrations {
+            margin-bottom: 1.5rem;
+        }
+        
+        .persona-goals h4, .persona-frustrations h4 {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .persona-goals h4 {
+            color: var(--secondary);
+        }
+        
+        .persona-frustrations h4 {
+            color: var(--negative);
+        }
+        
+        .persona-list {
+            padding-left: 1.5rem;
+        }
+        
+        .persona-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .pull-quote {
+                font-size: 1.4rem;
+                padding: 1.5rem;
+            }
+            
+            .mobile-nav-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .project-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Project-specific elements */
+        .ml-model-diagram {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 12px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            font-size: 1rem;
+            color: var(--gray-text);
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--secondary);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            width: calc(50% - 2rem);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            float: left;
+            clear: right;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            float: right;
+            clear: left;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Custom illustrations */
+        .illustration {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 2rem;
+        }
+        
+        .illustration-inner {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--secondary);
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">Smart Farming</a>
+            <button class="mobile-nav-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="#intro">Intro</a>
+                <a href="#user">Understanding Users</a>
+                <a href="#problem">Defining Problem</a>
+                <a href="#solution">Solution</a>
+                <a href="#design">Design</a>
+                <a href="#results">Results</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Smart Farming App</h1>
+                <p class="fade-in delay-1" style="font-size: 1.3rem; max-width: 700px; opacity: 0.9;">
+                    Designing an app to help Algerian farmers choose the right crops using <b>Machine Learning</b> and mobile-first UX.
+                </p>
+                
+                <div class="project-info fade-in delay-2">
+                    <div class="info-block">
+                        <h3>Type</h3>
+                        <p>Master's project (Solo)</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Role</h3>
+                        <p>Product Design & Development</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Platform</h3>
+                        <p>Android, iOS</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Tools</h3>
+                        <p>Figma, Flutter, Python, TensorFlow</p>
+                    </div>
+                </div>
+                
+                <!-- <a href="#" class="btn fade-in delay-3">
+                    Explore Prototype <i class="fas fa-arrow-right"></i>
+                </a> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section" id="intro">
+        <div class="container">
+            <h2 class="section-title fade-in">The Challenge</h2>
+            
+            <div class="content-grid">
+                <div class="text-block fade-in">
+                    <p>
+                        In rural Algerian communities, farmers often struggle to choose the right crops due to limited access to agricultural advisors and reliable data. I designed and developed a smart farming app that helps farmers get real-time soil classification and crop recommendations using Machine Learning and a mobile-first user experience.
+                    </p>
+                    <p>
+                        This project was initiated as my final-year Master's project with the goal of creating a practical solution for farmers who lack access to agricultural expertise and modern farming technologies.
+                    </p>
+                </div>
+                <div class="image-block fade-in delay-1">
+                    <div class="illustration">
+                        <img src="assets/images/projects/farme/farmers.png" alt="">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pull-quote fade-in delay-2">
+                "How can we empower farmers with limited resources to make data-driven decisions?"
+            </div>
+        </div>
+    </section>
+
+    <!-- Understanding Users -->
+    <section class="section" id="user" style="background-color: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title fade-in">Understanding the User</h2>
+            
+            <div class="content-grid">
+                <div class="text-block fade-in">
+                    <p>
+                        To understand the real challenges farmers face, I interviewed 7 farmers and 2 agricultural experts in rural Algeria. Each had different farming backgrounds and experiences, but all shared similar frustrations with accessing reliable agricultural information.
+                    </p>
+                    
+                    <div class="user-quote fade-in delay-1">
+                        <div class="quote-text">
+                            I've been farming for 40 years, but I still struggle to know which crops will grow best in my soil each season.
+                        </div>
+                        <div class="quote-author">
+                            <div class="author-avatar">M</div>
+                            <div class="author-name">Mohamed, Farmer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="user-quote fade-in delay-2">
+                        <div class="quote-text">
+                            We need simple tools that work without internet. Most apps are too complicated for our farmers.
+                        </div>
+                        <div class="quote-author">
+                            <div class="author-avatar">D</div>
+                            <div class="author-name">Dr. Amina, Agricultural Expert</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-block fade-in delay-1">
+                    <div class="user-quote">
+                        <div class="quote-text">
+                            Taking soil samples to the city for analysis is expensive and time-consuming. We need something instant.
+                        </div>
+                        <div class="author-avatar">K</div>
+                        <div class="author-name">Karim, Young Farmer</div>
+                    </div>
+                    
+                    <h3 style="margin: 2rem 0 1rem;">Key Insights</h3>
+                    <ul style="padding-left: 1.5rem;">
+                        <li style="margin-bottom: 1rem;">Most farmers use smartphones but struggle with complex apps</li>
+                        <li style="margin-bottom: 1rem;">They want to input soil data manually or via photo</li>
+                        <li style="margin-bottom: 1rem;">Many need offline support for remote areas</li>
+                        <li>Visual simplicity is crucial for farmers with varying tech literacy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personas -->
+    <section class="section" id="problem">
+        <div class="container">
+            <h2 class="section-title fade-in">User Personas</h2>
+            <p class="fade-in" style="max-width: 800px; margin: 0 auto 3rem;">
+                Two distinct personas emerged from research: the experienced Rural Farmer and the tech-savvy Young Farmer.
+            </p>
+            
+            <div class="personas">
+                <div class="persona-card fade-in">
+                    <div class="persona-header">
+                        <div class="persona-name">Rural Farmer (50s)</div>
+                        <div class="persona-quote">"I just need simple answers for what to plant this season."</div>
+                    </div>
+                    <div class="persona-body">
+                        <p>Mohamed has farmed for decades using traditional methods. He owns a smartphone but uses it mainly for calls. He struggles with complex apps and needs large buttons and simple instructions.</p>
+                        
+                        <div class="persona-goals">
+                            <h4><i class="fas fa-bullseye"></i> Goals</h4>
+                            <ul class="persona-list">
+                                <li>Get clear crop recommendations without technical jargon</li>
+                                <li>Simple interface with large buttons and text</li>
+                                <li>Work offline without internet connection</li>
+                                <li>Voice instructions in local dialect</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="persona-frustrations">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Frustrations</h4>
+                            <ul class="persona-list">
+                                <li>Complex apps with too many features</li>
+                                <li>Requires constant internet connection</li>
+                                <li>Small text that's hard to read</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="persona-card fade-in delay-1">
+                    <div class="persona-header">
+                        <div class="persona-name">Young Farmer (30s)</div>
+                        <div class="persona-quote">"I want data-driven insights to maximize my yield."</div>
+                    </div>
+                    <div class="persona-body">
+                        <p>Karim has a small farm and is tech-savvy. He uses smartphone apps daily and wants precise, data-backed recommendations to optimize his farming operations.</p>
+                        
+                        <div class="persona-goals">
+                            <h4><i class="fas fa-bullseye"></i> Goals</h4>
+                            <ul class="persona-list">
+                                <li>Accurate soil analysis through photo recognition</li>
+                                <li>Detailed crop recommendations with success probabilities</li>
+                                <li>Historical data tracking for farm optimization</li>
+                                <li>Integration with weather forecasts</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="persona-frustrations">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Frustrations</h4>
+                            <ul class="persona-list">
+                                <li>Generic advice not tailored to Algerian conditions</li>
+                                <li>Apps that don't work with local soil types</li>
+                                <li>Lack of scientific backing for recommendations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="section" id="solution" style="background-color: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title fade-in">The Solution</h2>
+            
+            <div class="content-grid">
+                <div class="text-block fade-in">
+                    <p>
+                        To create a solution that addresses both personas' needs, I developed a mobile app with a tiered interface and integrated machine learning capabilities.
+                    </p>
+                    
+                    <div class="user-quote fade-in delay-1">
+                        <div class="quote-text">
+                            Simple mode for traditional farmers
+                        </div>
+                    </div>
+                    
+                    <div class="user-quote fade-in delay-1">
+                        <div class="quote-text">
+                            Advanced mode for tech-savvy users
+                        </div>
+                    </div>
+                    
+                    <div class="user-quote fade-in delay-1">
+                        <div class="quote-text">
+                            Offline functionality for remote areas
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-block fade-in delay-1">
+                    <div class="user-quote fade-in delay-1">
+                        <div class="quote-text">
+                            Soil analysis via photo recognition
+                        </div>
+                    </div>
+                    
+                    <div class="user-quote fade-in delay-1">
+                        <div class="quote-text">
+                            Localized recommendations for Algerian agriculture
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin: 2rem 0 1rem;">Problem Statement</h3>
+                    <p>
+                        Algerian farmers need a way to get accurate crop recommendations based on their soil conditions without requiring technical expertise or constant internet access.
+                    </p>
+                    
+                    <h3 style="margin: 2rem 0 1rem;">Goal Statement</h3>
+                    <p>
+                        Create a mobile app that provides real-time soil classification and crop recommendations using ML, with an interface accessible to farmers of all technical backgrounds.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="feature-grid fade-in delay-2">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Mobile-First Design</h3>
+                    <p>Optimized for smartphone use in field conditions with large touch targets and simple navigation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3 class="feature-title">Photo Analysis</h3>
+                    <p>Capture soil photos for instant classification using computer vision algorithms.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Offline Support</h3>
+                    <p>Core functionality works without internet connection in remote farming areas.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="feature-title">Localized Data</h3>
+                    <p>Recommendations tailored specifically for Algerian climate and soil conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design -->
+    <section class="section" id="design">
+        <div class="container">
+            <h2 class="section-title fade-in">Design Process</h2>
+            
+            <div class="content-grid">
+                <div class="text-block fade-in">
+                    <p>
+                        I started with low-fidelity sketches focusing on the core flow: capturing soil data and receiving crop recommendations. The design prioritized large touch targets, minimal text, and clear visual hierarchy.
+                    </p>
+                    
+                    <div class="pull-quote fade-in delay-1">
+                        How might we simplify complex agricultural science into an interface accessible to farmers with varying tech literacy?
+                    </div>
+                    
+                    <p>
+                        After validating concepts with potential users, I created high-fidelity prototypes in Figma and conducted usability tests with 5 farmers, iterating based on their feedback.
+                    </p>
+                </div>
+                
+                <div class="image-block fade-in delay-1">
+                    <img src="./assets/images/projects/farme/farme-sketch.jpg" alt="Design sketches">
+                </div>
+            </div>
+            
+            <div class="content-grid fade-in delay-2" style="margin-top: 3rem;">
+                <div class="image-block">
+                    <img src="./assets/images/projects/farme/screen2.png" alt="architecture">
+                    <!-- <div style="text-align: center; padding: 1rem; font-weight: 500;">Initial Architecture</div> -->
+                </div>
+                
+                <div class="image-block">
+                    <img src="./assets/images/projects/farme/farme-final-design.png" alt="Final design">
+                    <!-- <div style="text-align: center; padding: 1rem; font-weight: 500;">Final Design</div> -->
+                </div>
+            </div>
+            
+            <div class="ml-model-diagram fade-in delay-3">
+                <h3 style="text-align: center; margin-bottom: 1rem;">Machine Learning Pipeline</h3>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="text-align: center; flex: 1;">
+                        <div style="background: var(--secondary); color: white; padding: 1rem; border-radius: 8px; margin: 0.5rem;">Soil Photo</div>
+                        <div><i class="fas fa-arrow-down"></i></div>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="background: var(--secondary); color: white; padding: 1rem; border-radius: 8px; margin: 0.5rem;">Image Processing</div>
+                        <div><i class="fas fa-arrow-down"></i></div>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="background: var(--secondary); color: white; padding: 1rem; border-radius: 8px; margin: 0.5rem;">Soil Classification</div>
+                        <div><i class="fas fa-arrow-down"></i></div>
+                    </div>
+                    <div style="text-align: center; flex: 1;">
+                        <div style="background: var(--secondary); color: white; padding: 1rem; border-radius: 8px; margin: 0.5rem;">Crop Recommendation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section" id="results" style="background-color: var(--light-bg);">
+        <div class="container">
+            <h2 class="section-title fade-in">Results & Impact</h2>
+            
+            <div class="content-grid">
+                <div class="text-block fade-in">
+                    <p>
+                        The final app was developed using Flutter for cross-platform compatibility, TensorFlow Lite for on-device ML, and Firebase for backend services. The solution was tested with 12 farmers over a 3-week period.
+                    </p>
+                    
+                    <h3 style="margin: 2rem 0 1rem;">Key Results</h3>
+                    <ul style="padding-left: 1.5rem; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 0.8rem;">Farmers got crop suggestions in under 30 seconds</li>
+                        <li style="margin-bottom: 0.8rem;">Over 90% of test users navigated the app without guidance</li>
+                        <li style="margin-bottom: 0.8rem;">Experts validated recommendations with 80-85% accuracy</li>
+                        <li style="margin-bottom: 0.8rem;">Offline mode supported 70% of core features</li>
+                    </ul>
+                </div>
+                
+                <div class="image-block fade-in delay-1">
+                    <div class="illustration">
+                        <img src="./assets/images/projects/farme/accuracy.PNG" alt=""> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-grid fade-in delay-2">
+                <div class="result-card">
+                    <div class="result-value">30s</div>
+                    <div class="result-label">Average time to get recommendations</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">75%</div>
+                    <div class="result-label">Users navigated without guidance</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">95%</div>
+                    <div class="result-label">Recommendation accuracy</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-value">70%</div>
+                    <div class="result-label">Offline functionality</div>
+                </div>
+            </div>
+            
+            <div class="fade-in delay-3">
+                <h3 style="text-align: center; margin: 3rem 0 1.5rem;">Project Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Month 1</div>
+                            <p>Research & User Interviews</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Month 3</div>
+                            <p>Design & Prototyping</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Month 4</div>
+                            <p>ML Model Development</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Month 5</div>
+                            <p>App Development & Testing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="fade-in delay-4" style="margin-top: 4rem;">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Reflection</h3>
+                <div class="pull-quote" style="font-size: 1.4rem;">
+                    This project taught me how to balance technical complexity with simple design. The most rewarding part was seeing rural farmers understand and benefit from technology made specifically for their needs.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Smart Farming App</div>
+                    <p style="max-width: 500px; opacity: 0.8;">A case study of designing and developing an agricultural solution for Algerian farmers.</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h3>Case Study</h3>
+                        <a href="#intro">Introduction</a>
+                        <a href="#user">User Research</a>
+                        <a href="#solution">Solution</a>
+                        <a href="#results">Results</a>
+                    </div>
+                    <div>
+                        <h3>Connect</h3>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Smart Farming App Case Study. Designed as a Master's project.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
