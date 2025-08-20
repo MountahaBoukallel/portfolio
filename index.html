@@ -1,934 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mountaha Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountaha Boukalel | UI/UX Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Mountaha Boukalel" width="80" style="border-radius: 12px;">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Mountaha Boukalel">Mountaha Boukalel</h1>
-
-          <p class="title">Software Engineer | Research enthusiast | Product Designer</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div class="logo-circle">MB</div>
+                    Mountaha Boukalel
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Mountaha Boukalel</h1>
+            <div class="tagline">PRODUCT DESIGNER ● UI/UX SPECIALIST ● RESEARCH-LED INNOVATOR</div>
+            <p>Skikda, Algeria | mountahaboukallel@gmail.com</p>
+            <div class="btn-container">
+                <a href="#" class="btn">Download CV</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
+        </div>
+    </section>
 
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:mountahaboukallel@gmail.com" class="contact-link">mountahaboukallel@gmail.com</a>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
             </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">UI Design</button>
+                <button class="filter-btn">UX Research</button>
+                <button class="filter-btn">Mobile Apps</button>
+                <button class="filter-btn">Web Design</button>
             </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+213540930111" class="contact-link">+213 540930111</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="2000-04-02">April 2, 2000</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Skikda, Algeria</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list"
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/mountaha-boukallel-b1672a1b2/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            Hello there, I am Moun 
-            I design user-first digital products with impact.
-            Currently based in Algeria.
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">UI/UX Designer</h4>
-
-                <p class="service-item-text">
-                  Building interactive, easy-to-use, and scalable tech solutions
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Research icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Research</h4>
-
-                <p class="service-item-text">
-                  High-quality development of applications at the professional level.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
-
-                <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-quote.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Project Management</h4>
-
-                <p class="service-item-text">
-                  Remotely leading cross-functional teams to deliver projects on time.
-
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Abbad Hadjab" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Abbad Hadjab</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Mountaha is an exceptionally talented and driven UI/UX Designer.
-                    During her time at Qareeb, I had the pleasure of managing her and was consistently impressed by her
-                    creativity, attention to detail,
-                    and user-first mindset. She brought energy, professionalism, and a collaborative spirit to every
-                    project.
-                    Mountaha’s ability to turn complex ideas into intuitive experiences made her a key contributor to
-                    our team. Any organization would be lucky to have her."
-                  </p>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="./assets/images/projects/hse/inspectra-cover.svg" alt="">
+                    </div>
+                    <div class="project-content">
+                        <h3>Health & Safety App</h3>
+                        <p>A case study for health and safety reporting app</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <h4>Client</h4>
+                                <p>Personal</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Timeline</h4>
+                                <p>1 week</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Role</h4>
+                                <p>Lead Designer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tools">
+                            <span class="tool">Figma</span>
+                            <span class="tool">User Testing</span>
+                            <span class="tool">Prototyping</span>
+                        </div>
+                        
+                        <a href="#healthAndSafetyApp.html" class="btn">View Case Study</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="./assets/images/projects/akari/akari-easy-rental.png" alt="">
+                    </div>
+                    <div class="project-content">
+                        <h3>Akari</h3>
+                        <p>A website for housing and rental solution that allows users to find properties easily. Created during 24h a hackathon hoasted by GDG Constantine.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <h4>Timeline</h4>
+                                <p>22hrs</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Role</h4>
+                                <p>UI/UX Designer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tools">
+                            <span class="tool">Adobe XD</span>
+                            <span class="tool">User Research</span>
+                            <span class="tool">Branding</span>
+                        </div>
+                        
+                        <a href="#./akari.html" class="btn">View Case Study</a>
+                    </div>
                 </div>
 
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Abbad Hadjab" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+                                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="./assets/images/projects/farme/farme-cover.svg" alt=""> </div>
+                    <div class="project-content">
+                        <h3>Farme</h3>
+                        <p></p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <h4>Timeline</h4>
+                                <p>6 Months</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Role</h4>
+                                <p>UI/UX Designer, Lead Researcher, Lead developer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tools">
+                            <span class="tool">Figma</span>
+                            <span class="tool">Academic Research</span>
+                            <span class="tool">Flutter</span>
+                            <span class="tool">Laravel</span>
+                            <span class="tool">ML/DL</span>
+                        </div>
+                        
+                        <a href="./farme.html" class="btn">View Case Study</a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-img">Geo Dzair App</div>
+                    <div class="project-content">
+                        <h3>GIS-Based Mobile Application</h3>
+                        <p>Designed and developed a GIS-based mobile app to address regional logistics and planning issues.</p>
+                        
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <h4>Client</h4>
+                                <p>Geo Dzair Solutions</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Timeline</h4>
+                                <p>4 Months</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4>Role</h4>
+                                <p>Co-founder & Designer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tools">
+                            <span class="tool">Figma</span>
+                            <span class="tool">Flutter</span>
+                            <span class="tool">PHP</span>
+                            <span class="tool">Brand strategy</span>
+                        </div>
+                        
+                        <a href="#https://geodzairsolutions.com/index.html" class="btn">View Project</a>
+                    </div>
+                </div>
             </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Abbad Hadjab</h4>
-
-              <time datetime="2025-05-19">19 May, 2025</time>
-
-              <div data-modal-text>
-                <p>
-                  Mountaha is an exceptionally talented and driven UI/UX Designer.
-                  During her time at Qareeb, I had the pleasure of managing her and was consistently impressed by her
-                  creativity, attention to detail,
-                  and user-first mindset. She brought energy, professionalism, and a collaborative spirit to every
-                  project.
-                  Mountaha’s ability to turn complex ideas into intuitive experiences made her a key contributor to our
-                  team. Any organization would be lucky to have her."
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
         </div>
+    </section>
 
-      </article>
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+    <!-- Skills Section - Enhanced with cute cards -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Expertise</h2>
             </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Masters in compter Science - University of Abdelhamid Mehri</h4>
-
-              <span>2022 - 2024</span>
-
-              <p class="timeline-text">
-                Majored in Information Systems and Web Technologies, gaining solid skills in research, mobile, and
-                Research and project management over two years.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Bachelor's in mathematics and computer science - University of Abdelhamid
-                Mehri</h4>
-
-              <span>2019 - 2022</span>
-
-              <p class="timeline-text">
-                Completed two years studying Mathematics and Informatics, then specialized in Software Engineering in my
-                final year, focusing on software development and engineering principles.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+            
+            <div class="skills-container">
+                <!-- UX/UI Skills Card -->
+                <div class="skill-card">
+                    <h3><i class="fas fa-pencil-ruler"></i> UX/UI Skills</h3>
+                    <ul class="skill-list">
+                        <li>UX research & strategy</li>
+                        <li>User flows & Wireframing</li>
+                        <li>High-fidelity UI design</li>
+                        <li>Prototyping (Figma, Adobe XD)</li>
+                        <li>Human-centered design</li>
+                        <li>Usability testing</li>
+                        <li>Stakeholder communication</li>
+                        <li>Problem framing</li>
+                        <li>Competitive analysis</li>
+                        <li>Design systems</li>
+                    </ul>
+                </div>
+                
+                <!-- Technical Skills Card -->
+                <div class="skill-card">
+                    <h3><i class="fas fa-laptop-code"></i> Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Problem-solving</li>
+                        <li>Critical thinking</li>
+                        <li>Data analysis</li>
+                        <li>Academic research</li>
+                        <li>Project documentation</li>
+                        <li>Report writing</li>
+                        <li>Project tracking</li>
+                        <li>Adaptability</li>
+                        <li>Team collaboration</li>
+                        <li>Resilience & Grit</li>
+                    </ul>
+                </div>
+                
+                <!-- Tools Card with Icons -->
+                <div class="skill-card">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fab fa-figma"></i></div>
+                            <div class="tool-name">Figma</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-pencil-ruler"></i></div>
+                            <div class="tool-name">Adobe XD</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fab fa-sketch"></i></div>
+                            <div class="tool-name">Sketch</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="tool-name">Framer</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fab fa-canva"></i></div>
+                            <div class="tool-name">Canva</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fab fa-jira"></i></div>
+                            <div class="tool-name">Jira</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-tasks"></i></div>
+                            <div class="tool-name">ClickUp</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-book"></i></div>
+                            <div class="tool-name">Notion</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="tool-name">MS Teams</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fab fa-android"></i></div>
+                            <div class="tool-name">Android Studio</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="tool-name">Microsoft Office</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="tool-name">Lucidchart</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="tool-name">Power BI</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-code"></i></div>
+                            <div class="tool-name">HTML, CSS</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-code"></i></div>
+                            <div class="tool-name">JavaScript</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-code"></i></div>
+                            <div class="tool-name">PHP Laraval </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-code"></i></div>
+                            <div class="tool-name">Flutter </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-code"></i></div>
+                            <div class="tool-name">Java</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon"><i class="fas fa-code"></i></div>
+                            <div class="tool-name">Python</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">IT Analyst & Product Designer </h4>
-
-              <span>Sept 2024 - April 2025</span>
-
-              <p class="timeline-text">
-                Led end-to-end UI/UX design, branding, and prototyping while managing projects via Jira,
-                ensuring smooth collaboration with developers. Also handled data entry, loan processing,
-                and email-based customer service, showcasing strong cross-functional and remote teamwork skills.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Product Designer</h4>
-
-              <span>Nov 2024 - April 2025</span>
-
-              <p class="timeline-text">
-                Designed the visual identity and user experience for multiple products, including Wizabot, delivering
-                high-fidelity UI for web.
-                Collaborated with developers to ensure smooth implementation, supported by strong user research and
-                cross-functional teamwork.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Co-founder & Project Manager & Product Designer</h4>
-
-              <span>Aug 2023 - July 2024</span>
-
-              <p class="timeline-text">
-                Led user research, market analysis, and full-cycle UI/UX design and development for a mobile app, from
-                wireframes to deployment. As part of the founding team, I advised on product direction and collaborated
-                daily with tech and management teams to ensure alignment and smooth execution.
-
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <!-- Stack section -->
-        <section class="stacks">
-          <h3 class="h3 stacks-title">My Stacks</h3>
-          <div class="stacks-container" id="stacksContainer">
-            <!-- Stack cards will be generated by JavaScript -->
-          </div>
-        </section>
-
-        <!-- Skill section -->
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Product Design</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Frontend Development</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">App development (Flutter)</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Project Management</h5>
-                <data value="60">60%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <!-- <li class="filter-item">
-              <button data-filter-btn>Product design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Research</button>
-            </li> -->
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Product design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Research</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <!-- Project one -->
-            <li class="project-item active" data-filter-item data-category="product-design" data-project="1">
-              <a href="#" class="project-card" data-title="Health and Safety App" data-category="Product Design" data-date="Jan 2025"
-                data-description="A comprehensive Saas platform that allows HSE personnel to write reports in the moment and share them with their peers or superiors"
-                data-tools="Figma, User Interviews, Analytics"
-                data-image="./assets/images/projects/hse/inspectra-cover.svg"
-                data-link="healthAndSafetyApp.html">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img
-                    src="./assets/images/projects/hse/inspectra-cover.svg"
-                    alt="health-and-safety" loading="lazy">
-                </figure>
-                <h3 class="project-title">Health and Safety</h3>
-                <p class="project-category">Product Design</p>
-              </a>
-            </li>
-
-            <!-- project two -->
-            <li class="project-item active" data-filter-item data-category="product-design" data-project="2">
-              <a href="#" class="project-card" data-title="Farme" data-category="Product Design"
-                data-date="June 2022"
-                data-description="An integrated networking platform enhanced by Artificial Intelligence to increase crop yield"
-                data-tools="Figma, Flutter, Laravel, Machine learning"
-                data-image="./assets/images/projects/farme/farme-cover.svg"
-                data-link="./farme.html">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img
-                    src="./assets/images/projects/farme/farme-cover.svg"
-                    alt="farme" loading="lazy">
-                </figure>
-                <h3 class="project-title">Farme</h3>
-                <p class="project-category">Research / Product Design</p>
-              </a>
-            </li>
-
-            <!-- UI projects -->
-             <!-- Project three -->
-            <li class="project-item active" data-filter-item data-category="design" data-project="3">
-              <a href="#" class="project-card" data-title="Easiy Rentals" data-category="Design" data-date="Dec 2023"
-                data-description="A website for housing and rental solution that allows users to find properties easily. Created during 24h a hackathon hoasted by GDG Constantine. "
-                data-tools="Figma"
-                data-image="./assets/images/projects/akari/akari-easy-rental.png"
-                data-link="./akari.html">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img
-                    src="./assets/images/projects/akari/akari-easy-rental.png"
-                    alt="housing" loading="lazy">
-                </figure>
-                <h3 class="project-title">Akari</h3>
-                <p class="project-category">UI design</p>
-              </a>
-            </li>
-
-            <!-- project four -->
-            <li class="project-item active" data-filter-item data-category="design" data-project="3">
-              <a href="#" class="project-card" data-title="Design collection" data-category="Design" data-date=""
-                data-description="Collection of designs created with love over the years "
-                data-tools="Figma"
-                data-image="assets/images/projects/collection.jpg"
-                data-link="https://www.figma.com/design/J3HUSfBmZEMIvYY5MTr4y0/Mountaha-s-Portfolio?node-id=12-2359&t=qzDFJqyS95raTrHa-1">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img
-                    src="assets/images/projects/collection.jpg"
-                    alt="portfolio" loading="lazy">
-                </figure>
-                <h3 class="project-title">Collection of designs created with love over the years </h3>
-                <p class="project-category">UI design</p>
-              </a>
-            </li>
-
-             <!-- project four -->
-            <li class="project-item active" data-filter-item data-category="research" data-project="3">
-              <a href="#" class="project-card" data-title="Intelligent Soil Classification for Precision Agriculture in Algeria: Integrating Machine Learning and Image Processing for Optimized Crop Yield and Recommendation" data-category="Research" data-date=""
-                data-description=" "
-                data-tools="ML, DL, Flutter"
-                data-image="assets/images/projects/Research.png"
-                data-link="https://www.researchgate.net/publication/393214424_Intelligent_Soil_Classification_for_Precision_Agriculture_in_Algeria_Integrating_Machine_Learning_and_Image_Processing_for_Optimized_Crop_Yield_and_Recommendation">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img
-                    src="assets/images/projects/Research.png"
-                    alt="Research paper" loading="lazy">
-                </figure>
-                <h3 class="project-title">Intelligent Soil Classification for Precision Agriculture in Algeria</h3>
-                <p class="project-category">Research</p>
-              </a>
-            </li>
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-      <!-- here -->
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25585.32259976766!2d7.076579960206213!3d36.718590508809214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f04aa62c73edbd%3A0x916edf386f05822d!2sAzzaba!5e0!3m2!1sen!2sdz!4v1747649110043!5m2!1sen!2sdz"
-              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+                
+                <!-- Languages Section - Horizontal Display -->
+            <div class="languages-section">
+                <div class="section-title">
+                    <h2>Languages</h2>
+                </div>
+                
+                <div class="languages-container">
+                    <!-- English -->
+                    <div class="language-card">
+                        <div class="language-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="language-name">English</div>
+                        <div class="language-level">Professional proficiency (IELTS 7.5)</div>
+                    </div>
+                    
+                    <!-- French -->
+                    <div class="language-card">
+                        <div class="language-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="language-name">French</div>
+                        <div class="language-level">Intermediate (TCF B2)</div>
+                    </div>
+                    
+                    <!-- Arabic -->
+                    <div class="language-card">
+                        <div class="language-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="language-name">Arabic</div>
+                        <div class="language-level">Native</div>
+                    </div>
+                </div>
             </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
-    </div>
-
-
-
-    <!-- Project Modal -->
-    <div class="modal-container" id="projectModal">
-      <div class="overlay" data-overlay-project></div>
-      <div class="project-modal">
-        <button class="modal-close-btn" id="modalCloseBtnProject">
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-
-        <div class="modal-content">
-          <div class="modal-img-wrapper">
-            <img src="" alt="Project image" class="modal-project-img">
-          </div>
-
-          <div class="modal-text-content">
-            <h3 class="modal-project-title"></h3>
-            <div class="modal-meta">
-              <span class="modal-project-category"></span>
-              <span class="modal-project-date"></span>
-            </div>
-
-            <p class="modal-project-description"></p>
-
-            <div class="modal-tools">
-              <h4>Tools Used:</h4>
-              <ul class="tools-list"></ul>
-            </div>
-
-            <a href="#" class="project-link" target="_blank">View Project</a>
-          </div>
         </div>
-      </div>
-    </div>
+    </section>
+            </div>
+        </div>
+    </section>
 
-  </main>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+            </div>
+            
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Product Designer | UI/UX Designer</h3>
+                        <h4>EasyGlobalTradeInc | Full time | Sept 2021 - April 2025</h4>
+                        <p>Remote (USA & Canada)</p>
+                        <ul>
+                            <li>Designed and optimized user journeys for 10+ cross-platform products</li>
+                            <li>Conducted research sessions, interviews, and usability tests</li>
+                            <li>Built pixel-perfect prototypes in Figma</li>
+                            <li>Led UI design for inventory management system</li>
+                            <li>Collaborated with developers for clean, scalable design specs</li>
+                            <li>Provided detailed reports using Jira</li>
+                        </ul>
+                        
+                        <div class="achievements">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Reduced design-development iteration by 35%</li>
+                                <li>Increased user engagement by 40% after major UI overhaul</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>UI/UX Designer</h3>
+                        <h4>Qareeb | Full time | Nov 2024 - April 2025</h4>
+                        <p>Hybrid (Algiers, Algeria)</p>
+                        <ul>
+                            <li>Designed multiple product identities from scratch</li>
+                            <li>Developed and scaled AI-powered SaaS platform (Wizabot)</li>
+                            <li>Delivered high-fidelity prototypes for mobile-first platforms</li>
+                            <li>Conducted usability testing to validate flows</li>
+                            <li>Collaborated with developers for seamless handoff</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Co-founder | Product Designer | Mobile Developer</h3>
+                        <h4>Geo Dzair Solutions | Part time | Aug 2023 - July 2024</h4>
+                        <p>Constantine, Algeria</p>
+                        <ul>
+                            <li>Designed and developed GIS-based mobile app</li>
+                            <li>Led market research and UX strategy</li>
+                            <li>Aligned product roadmap with business objectives</li>
+                            <li>Translated stakeholder needs into product features</li>
+                        </ul>
+                        
+                        <div class="achievements">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Launched MVP in under 4 months</li>
+                                <li>Secured initial funding and strategic partnerships</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's talk about your project</h3>
+                    <p>Feel free to reach out for collaborations or just a friendly hello. I'm always open to discussing new projects and opportunities.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>mountahaboukallel@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Skikda, Algeria</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Portfolio</h4>
+                            <p>www.mountaha.design</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="What is this regarding?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Enter your message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Mountaha Boukalel. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <script src="./assets/js/script.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <script>
-    // JavaScript to generate stack cards
-    document.addEventListener('DOMContentLoaded', function () {
-      const stacksContainer = document.getElementById('stacksContainer');
-      const stacks = [{
-          title: "Figma",
-          desc: "Interface Design Tool",
-          icon: "fab fa-figma",
-          category: "Design Tool",
-          categoryClass: "design-category"
-        },
-        {
-          title: "Framer",
-          desc: "No Code Design Tool",
-          icon: "fas fa-laptop-code",
-          category: "No Code",
-          categoryClass: "design-category"
-        },
-        {
-          title: "Sketch",
-          desc: "Interface Design Tool",
-          icon: "",
-          category: "Design tool",
-          categoryClass: "design-category"
-        },
-        {
-          title: "Adobe XD",
-          desc: "Interface Design Tool",
-          icon: "",
-          category: "Design tool",
-          categoryClass: "design-category"
-        },
-        {
-          title: "Maze",
-          desc: "Interface Design Tool",
-          icon: "",
-          category: "Design tool",
-          categoryClass: "design-category"
-        },
-        {
-          title: "Zoom",
-          desc: "Productivity Tool",
-          icon: "fab fa-slack",
-          category: "Productivity",
-          categoryClass: "productivity-category"
-        },
-        {
-          title: "Notion",
-          desc: "Productivity Tool",
-          icon: "fas fa-book",
-          category: "Productivity",
-          categoryClass: "productivity-category"
-        },
-
-        {
-          title: "Jira",
-          desc: "Productivity Tool",
-          icon: "fab fa-jira",
-          category: "Productivity",
-          categoryClass: "productivity-category"
-        },
-        {
-          title: "Click up",
-          desc: "Productivity Tool",
-          icon: "fas fa-clickup",
-          category: "Productivity",
-          categoryClass: "productivity-category"
-        },
-      ];
-
-      stacks.forEach(stack => {
-        const stackCard = document.createElement('div');
-        stackCard.className = 'stack-card';
-
-        stackCard.innerHTML = `
-          <div class="stack-category ${stack.categoryClass}">${stack.category}</div>
-          <div class="stack-icon">
-            <i class="${stack.icon}"></i>
-          </div>
-          <h4 class="stack-title">${stack.title}</h4>
-          <p class="stack-desc">${stack.desc}</p>
-        `;
-
-        stacksContainer.appendChild(stackCard);
-      });
-    });
-  </script>
-
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // In a real implementation, you would filter projects here
+                    // For this demo, we'll just show a message
+                    alert(`Filtering by: ${this.textContent}`);
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    
+                    // Show success message
+                    alert(`Thank you ${name}! Your message has been sent. I'll get back to you at ${email} soon.`);
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
 </body>
-
 </html>
